@@ -1,0 +1,30 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "video-analyst"
+version = "0.1.0"
+description = "Analyze videos and produce AI reproduction plans using Veo 3 and Nano Banana 2"
+requires-python = ">=3.11"
+dependencies = [
+    "yt-dlp>=2024.0.0",
+    "google-genai>=1.0.0",
+    "click>=8.0",
+    "pydantic>=2.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "ruff>=0.4",
+]
+
+[project.scripts]
+video-analyst = "video_analyst.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/video_analyst"]
+
+[tool.ruff]
+line-length = 100
