@@ -1,9 +1,8 @@
-name: Publish to npm
+name: Publish to npm (manual release)
 
 on:
   release:
     types: [published]
-  workflow_dispatch:
 
 jobs:
   publish:
@@ -22,7 +21,6 @@ jobs:
       - name: Sync version from pyproject.toml
         run: |
           VERSION=$(grep '^version' pyproject.toml | head -1 | sed 's/version = "\(.*\)"/\1/')
-          echo "Syncing version to $VERSION"
           node -e "
             const pkg = require('./package.json');
             pkg.version = '$VERSION';
