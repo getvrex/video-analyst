@@ -1,0 +1,38 @@
+{
+  "name": "@getvrex/video-analyst",
+  "version": "0.1.0",
+  "description": "Analyze videos and produce AI reproduction plans with Veo 3 and Nano Banana 2 prompts",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/getvrex/video-analyst.git"
+  },
+  "bin": {
+    "video-analyst-install": "./bin/install.sh"
+  },
+  "scripts": {
+    "postinstall": "node scripts/postinstall.js",
+    "install-skill": "./bin/install-skill.sh"
+  },
+  "files": [
+    "bin/",
+    "scripts/",
+    "src/",
+    "SKILL.md",
+    "pyproject.toml",
+    "README.md"
+  ],
+  "keywords": [
+    "video",
+    "analysis",
+    "veo3",
+    "gemini",
+    "ai",
+    "claude-code-skill",
+    "video-generation",
+    "nano-banana"
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
+}

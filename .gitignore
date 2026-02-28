@@ -14,3 +14,6 @@ downloads/
 .pytest_cache/
 .venv/
 venv/
+node_modules/
+package-lock.json
+.DS_Store
