@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "video-analyst"
-version = "0.1.0"
+version = "1.0.0"
 description = "Analyze videos and produce AI reproduction plans using Veo 3 and Nano Banana 2"
 requires-python = ">=3.11"
 dependencies = [
