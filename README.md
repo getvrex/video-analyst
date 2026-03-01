@@ -87,26 +87,26 @@ If installed as a skill, use it directly in Claude Code:
 
 18 predefined styles that apply consistently across all generation prompts:
 
-| Style | Description |
-|-------|-------------|
-| `realistic` | Ultra photorealistic — 35mm film, natural grain, no AI look (default) |
-| `cinematic` | Hollywood blockbuster — anamorphic, dramatic lighting, teal/orange |
-| `ghibli` | Studio Ghibli — hand-painted, lush backgrounds, whimsical |
-| `wes-anderson` | Symmetrical, pastel palette, meticulous production design |
-| `noir` | Film noir — high contrast B&W, dramatic shadows, 1940s |
-| `cyberpunk` | Neon-lit dystopia — magenta/cyan, rain-slicked streets |
-| `vintage-film` | 1970s analog — heavy grain, faded colors, Kodak film stock |
-| `anime` | Modern anime — sharp linework, vivid colors, dynamic angles |
-| `watercolor` | Soft painted — visible brush strokes, flowing colors, dreamy |
-| `documentary` | Raw handheld — 16mm film, natural light, authentic |
-| `kurzgesagt` | Flat design motion graphics — vibrant vector, rounded shapes, bold colors |
-| `synthwave` | 80s retro-futuristic — neon grids, chrome, sunset gradients, laser lines |
-| `comic-book` | Pop art — bold ink outlines, halftone dots, vivid primary colors |
-| `pixel-art` | Retro 16-bit gaming — chunky pixels, limited palette, nostalgic |
-| `paper-cutout` | Paper craft — layered cardstock, hand-cut edges, handmade charm |
-| `low-poly` | Faceted 3D geometry — crystalline surfaces, vibrant gradients, minimal |
-| `claymation` | Stop-motion clay — sculpted figures, fingerprint textures, warm lighting |
-| `vaporwave` | 90s surreal digital — pastel gradients, glitch effects, marble busts |
+| Style | Preview | Description |
+|-------|---------|-------------|
+| `realistic` | <img src="style-previews/realistic.png" width="128"> | Ultra photorealistic — 35mm film, natural grain, no AI look (default) |
+| `cinematic` | <img src="style-previews/cinematic.png" width="128"> | Hollywood blockbuster — anamorphic, dramatic lighting, teal/orange |
+| `ghibli` | <img src="style-previews/ghibli.png" width="128"> | Studio Ghibli — hand-painted, lush backgrounds, whimsical |
+| `wes-anderson` | <img src="style-previews/wes-anderson.png" width="128"> | Symmetrical, pastel palette, meticulous production design |
+| `noir` | <img src="style-previews/noir.png" width="128"> | Film noir — high contrast B&W, dramatic shadows, 1940s |
+| `cyberpunk` | <img src="style-previews/cyberpunk.png" width="128"> | Neon-lit dystopia — magenta/cyan, rain-slicked streets |
+| `vintage-film` | <img src="style-previews/vintage-film.png" width="128"> | 1970s analog — heavy grain, faded colors, Kodak film stock |
+| `anime` | <img src="style-previews/anime.png" width="128"> | Modern anime — sharp linework, vivid colors, dynamic angles |
+| `watercolor` | <img src="style-previews/watercolor.png" width="128"> | Soft painted — visible brush strokes, flowing colors, dreamy |
+| `documentary` | <img src="style-previews/documentary.png" width="128"> | Raw handheld — 16mm film, natural light, authentic |
+| `kurzgesagt` | <img src="style-previews/kurzgesagt.png" width="128"> | Flat design motion graphics — vibrant vector, rounded shapes, bold colors |
+| `synthwave` | <img src="style-previews/synthwave.png" width="128"> | 80s retro-futuristic — neon grids, chrome, sunset gradients, laser lines |
+| `comic-book` | <img src="style-previews/comic-book.png" width="128"> | Pop art — bold ink outlines, halftone dots, vivid primary colors |
+| `pixel-art` | <img src="style-previews/pixel-art.png" width="128"> | Retro 16-bit gaming — chunky pixels, limited palette, nostalgic |
+| `paper-cutout` | <img src="style-previews/paper-cutout.png" width="128"> | Paper craft — layered cardstock, hand-cut edges, handmade charm |
+| `low-poly` | <img src="style-previews/low-poly.png" width="128"> | Faceted 3D geometry — crystalline surfaces, vibrant gradients, minimal |
+| `claymation` | <img src="style-previews/claymation.png" width="128"> | Stop-motion clay — sculpted figures, fingerprint textures, warm lighting |
+| `vaporwave` | <img src="style-previews/vaporwave.png" width="128"> | 90s surreal digital — pastel gradients, glitch effects, marble busts |
 
 ## Output Structure
 
