@@ -152,6 +152,148 @@ STYLES: dict[str, dict[str, str]] = {
             "raw intimate perspective."
         ),
     },
+    "kurzgesagt": {
+        "label": "Kurzgesagt Flat Design",
+        "description": "Vibrant flat vector — rounded shapes, bold colors, clean infographic aesthetic",
+        "video_directive": (
+            "Kurzgesagt flat design motion graphics style. Clean vector animation "
+            "with rounded geometric shapes and bold vibrant colors on dark backgrounds. "
+            "Smooth gradient shading, no outlines, simplified cute characters with "
+            "dot eyes. Rich jewel-tone palette — deep blues, warm oranges, bright "
+            "teals, vivid magentas. Subtle particle effects and glowing accents. "
+            "Smooth satisfying transitions and fluid motion."
+        ),
+        "image_directive": (
+            "Kurzgesagt flat design illustration, clean vector art with rounded "
+            "geometric shapes, bold vibrant colors on dark background, smooth "
+            "gradients, no outlines, simplified cute characters with dot eyes, "
+            "rich jewel-tone palette, subtle glow effects, infographic aesthetic."
+        ),
+    },
+    "synthwave": {
+        "label": "Synthwave Retrowave",
+        "description": "80s retro-futuristic — neon grids, chrome, sunset gradients, laser lines",
+        "video_directive": (
+            "Synthwave retrowave aesthetic. Neon-lit 1980s retro-futuristic world "
+            "with perspective grid landscapes vanishing into glowing horizons. "
+            "Chrome and metallic surfaces reflecting neon pink, electric purple, "
+            "and hot cyan. Sunset gradient skies from deep purple to hot pink. "
+            "Laser scan lines, lens flares, and deep glow bloom effects. "
+            "Smooth cinematic camera movement across digital landscapes."
+        ),
+        "image_directive": (
+            "Synthwave retrowave art, neon-lit 1980s retro-futuristic scene, "
+            "perspective grid landscape, chrome metallic surfaces, neon pink "
+            "and electric purple and hot cyan palette, sunset gradient sky, "
+            "laser scan lines, deep glow bloom effects, retro-futuristic."
+        ),
+    },
+    "comic-book": {
+        "label": "Comic Book Pop Art",
+        "description": "Bold ink outlines, halftone dots, vivid primary colors, dynamic panels",
+        "video_directive": (
+            "Comic book pop art style. Bold black ink outlines, vivid primary "
+            "colors — red, blue, yellow — with Ben-Day halftone dot shading. "
+            "Dynamic Dutch angles and dramatic foreshortening. Speed lines for "
+            "motion, impact bursts, and graphic onomatopoeia. High contrast "
+            "cel shading with flat color fills. Punchy, energetic composition."
+        ),
+        "image_directive": (
+            "Comic book pop art illustration, bold black ink outlines, vivid "
+            "primary colors, Ben-Day halftone dot shading, dynamic composition, "
+            "speed lines, high contrast cel shading, flat color fills, "
+            "graphic novel aesthetic."
+        ),
+    },
+    "pixel-art": {
+        "label": "Pixel Art Retro",
+        "description": "Retro 16-bit gaming — chunky pixels, limited palette, nostalgic charm",
+        "video_directive": (
+            "16-bit pixel art animation style. Chunky visible pixels with a "
+            "limited but vibrant color palette. Smooth sub-pixel animation with "
+            "satisfying frame-by-frame motion. Rich parallax scrolling backgrounds "
+            "with detailed pixel environments. Dithering for gradients, crisp "
+            "pixel-perfect edges. Nostalgic retro gaming aesthetic with modern "
+            "color depth."
+        ),
+        "image_directive": (
+            "16-bit pixel art illustration, chunky visible pixels, limited "
+            "vibrant color palette, dithering for gradients, pixel-perfect "
+            "edges, detailed pixel environment, nostalgic retro gaming aesthetic."
+        ),
+    },
+    "paper-cutout": {
+        "label": "Paper Cutout Craft",
+        "description": "Layered paper craft — textured cardstock, visible layers, handmade charm",
+        "video_directive": (
+            "Paper cutout stop-motion animation style. Characters and environments "
+            "made from layered textured cardstock and craft paper. Visible paper "
+            "grain and fiber texture, slightly imperfect hand-cut edges. Subtle "
+            "drop shadows between paper layers creating depth. Warm soft lighting "
+            "as if on a physical craft table. Charming handmade aesthetic with "
+            "gentle, slightly jerky stop-motion movement."
+        ),
+        "image_directive": (
+            "Paper cutout craft illustration, layered textured cardstock, "
+            "visible paper grain and fiber, hand-cut edges, drop shadows "
+            "between layers, warm soft lighting, charming handmade aesthetic, "
+            "paper craft collage style."
+        ),
+    },
+    "low-poly": {
+        "label": "Low Poly Geometric",
+        "description": "Faceted 3D geometry — crystalline surfaces, vibrant gradients, modern minimal",
+        "video_directive": (
+            "Low poly 3D animation style. Faceted geometric surfaces with flat "
+            "triangular polygons creating crystalline, angular forms. Vibrant "
+            "color gradients across polygon faces with subtle lighting variation. "
+            "Clean minimal environments with bold color blocking. Smooth camera "
+            "orbits revealing geometric depth. Modern, stylized aesthetic with "
+            "sharp clean edges and no texture maps."
+        ),
+        "image_directive": (
+            "Low poly 3D illustration, faceted geometric surfaces with flat "
+            "triangular polygons, crystalline angular forms, vibrant color "
+            "gradients across faces, clean minimal composition, bold color "
+            "blocking, sharp edges, modern stylized aesthetic."
+        ),
+    },
+    "claymation": {
+        "label": "Claymation Stop-Motion",
+        "description": "Clay animation — tactile sculpted figures, fingerprint textures, warm lighting",
+        "video_directive": (
+            "Claymation stop-motion animation style. Characters and sets sculpted "
+            "from modeling clay with visible fingerprint impressions and tool marks. "
+            "Slightly bumpy imperfect surfaces with rich saturated clay colors. "
+            "Warm studio lighting with soft shadows. Charming slightly jerky "
+            "stop-motion movement at 12fps. Physical miniature set pieces with "
+            "tactile handcrafted quality."
+        ),
+        "image_directive": (
+            "Claymation style, sculpted modeling clay characters, visible "
+            "fingerprint textures and tool marks, bumpy imperfect surfaces, "
+            "rich saturated clay colors, warm studio lighting, miniature set, "
+            "tactile handcrafted quality."
+        ),
+    },
+    "vaporwave": {
+        "label": "Vaporwave Aesthetic",
+        "description": "90s surreal digital — pastel gradients, glitch effects, marble busts, retro tech",
+        "video_directive": (
+            "Vaporwave aesthetic. Dreamy surreal 90s digital world with pastel "
+            "pink, lavender, and mint gradients. Glitch effects, scan lines, and "
+            "chromatic aberration. Classical Greek marble statues and busts in "
+            "neon-lit digital spaces. Retro computer UI elements, checkerboard "
+            "floors, palm trees, and Japanese text. Lo-fi VHS quality with "
+            "tracking artifacts and color bleeding."
+        ),
+        "image_directive": (
+            "Vaporwave aesthetic, dreamy surreal 90s digital art, pastel pink "
+            "and lavender and mint gradients, glitch effects, scan lines, "
+            "Greek marble busts, neon-lit digital space, retro computer elements, "
+            "lo-fi VHS quality, chromatic aberration."
+        ),
+    },
 }
 
 # Sorted list for CLI display

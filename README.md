@@ -85,7 +85,7 @@ If installed as a skill, use it directly in Claude Code:
 
 ## Visual Styles
 
-10 predefined styles that apply consistently across all generation prompts:
+18 predefined styles that apply consistently across all generation prompts:
 
 | Style | Description |
 |-------|-------------|
@@ -99,6 +99,14 @@ If installed as a skill, use it directly in Claude Code:
 | `anime` | Modern anime — sharp linework, vivid colors, dynamic angles |
 | `watercolor` | Soft painted — visible brush strokes, flowing colors, dreamy |
 | `documentary` | Raw handheld — 16mm film, natural light, authentic |
+| `kurzgesagt` | Flat design motion graphics — vibrant vector, rounded shapes, bold colors |
+| `synthwave` | 80s retro-futuristic — neon grids, chrome, sunset gradients, laser lines |
+| `comic-book` | Pop art — bold ink outlines, halftone dots, vivid primary colors |
+| `pixel-art` | Retro 16-bit gaming — chunky pixels, limited palette, nostalgic |
+| `paper-cutout` | Paper craft — layered cardstock, hand-cut edges, handmade charm |
+| `low-poly` | Faceted 3D geometry — crystalline surfaces, vibrant gradients, minimal |
+| `claymation` | Stop-motion clay — sculpted figures, fingerprint textures, warm lighting |
+| `vaporwave` | 90s surreal digital — pastel gradients, glitch effects, marble busts |
 
 ## Output Structure
 
