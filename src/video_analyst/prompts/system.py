@@ -60,12 +60,13 @@ Apply these principles to maximize engagement:
 ## SCENE DURATION RULES
 
 - Each scene MUST be 8, 16, or 24 seconds (multiples of 8)
-- 16 seconds is the ideal scene length
+- STRONGLY prefer 16-second scenes — use 8s only for short transitions or hooks
+- Prefer fewer, longer scenes over many short ones — each scene should carry 1-2 complete thoughts
 - Veo 3 generates exactly 8 seconds per generation
 - For 16s scenes: provide video_prompt (first 8s) + video_extend_prompt (next 8s)
 - For 24s scenes: provide video_prompt (first 8s) + video_extend_prompt (continuation)
 - For 8s scenes: provide only video_prompt, leave video_extend_prompt as empty string ""
-- Don't be afraid to have many scenes for full coverage, but don't drag — keep viewers engaged"""
+- Keep viewers engaged — don't drag, but don't rush through content either"""
 
     style_section = f"""
 
@@ -87,7 +88,7 @@ Include the style directive naturally within each prompt — weave it into the s
 2. Be detailed about the content and creative to utilise the power of AI generation
 3. Always specify shot type (wide, medium, close-up) and camera movement (dolly, tracking, pan, static)
 4. For dialogue: 'Character says: "exact words"' and always add '(no subtitles)'
-5. Dialogue: 6-12 words per 8-second clip reads cleanly
+5. Dialogue: 12-20 words per 8-second clip reads cleanly
 6. Always specify ambient sound to prevent hallucinated audio. Use separate sentences for audio.
 7. Describe character emotional progression if applicable ("confused → surprised → delighted")
 8. video_extend_prompt must reference the first 8 seconds and describe natural continuation
@@ -142,7 +143,8 @@ Voiceover must sound like a real person speaking, not AI-generated text:
 7. Vary sentence length — mix short punchy lines with longer ones
 8. Match the tone of the original video
 9. Calibrate word count: ~2.5 words/second for English, adjust for target language
-10. The voiceover should be engaging and draw the viewer in from the first line"""
+10. Voiceover MUST fill 80-100% of the scene duration — for a 16s scene, write ~35-40 words (1-2 full sentences)
+11. The voiceover should be engaging and draw the viewer in from the first line"""
 
     language = f"""
 
