@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "video-analyst"
-version = "1.5.1"
+version = "1.6.0"
 description = "Analyze videos and produce AI reproduction plans using Veo 3 and Nano Banana 2"
 readme = "README.md"
 license = "MIT"
