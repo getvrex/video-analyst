@@ -87,14 +87,32 @@ Include the style directive naturally within each prompt — weave it into the s
 1. Structure: Scene description + Visual style + Camera movement + Subject action + Background + Lighting + Audio
 2. Be detailed about the content and creative to utilise the power of AI generation
 3. Always specify shot type (wide, medium, close-up) and camera movement (dolly, tracking, pan, static)
-4. For dialogue: 'Character says: "exact words"' and always add '(no subtitles)'
-5. Dialogue: 12-20 words per 8-second clip reads cleanly
-6. Always specify ambient sound to prevent hallucinated audio. Use separate sentences for audio.
-7. Describe character emotional progression if applicable ("confused → surprised → delighted")
-8. video_extend_prompt must reference the first 8 seconds and describe natural continuation
-9. Priority ordering: most important elements first — Veo pays more attention to what comes first
-10. NEVER put voiceover text inside video_prompt or video_extend_prompt. Voiceover is separate — it goes only in voiceover_text. Video prompts describe ONLY visuals, camera, and ambient audio.
-11. NEVER include text, titles, captions, or written words in video_prompt, video_extend_prompt, or t2i_prompt. AI generators render text poorly. If the original scene has a prominent title card or on-screen text, put that text in title_card_text instead. Skip small/incidental text (watermarks, lower-thirds).
+4. Always specify ambient sound to prevent hallucinated audio. Use separate sentences for audio.
+5. Describe character emotional progression if applicable ("confused → surprised → delighted")
+6. video_extend_prompt must reference the first 8 seconds and describe natural continuation
+7. Priority ordering: most important elements first — Veo pays more attention to what comes first
+
+### CRITICAL — NO TEXT IN VIDEO PROMPTS (MANDATORY)
+
+These rules are ABSOLUTE and must NEVER be violated:
+
+A. **NO VOICEOVER IN VIDEO PROMPTS**: NEVER put voiceover text, dialogue, narration, or spoken words inside video_prompt or video_extend_prompt. Voiceover goes ONLY in voiceover_text. Video prompts describe ONLY visuals, camera, and ambient audio.
+   - WRONG: 'A woman walks. Voiceover: "Hello world"'
+   - WRONG: 'A man says: "Welcome to my channel"'
+   - WRONG: 'Character speaks: "This is amazing" (no subtitles)'
+   - RIGHT: 'A woman walks through a park. Medium shot, natural lighting. Birds chirping.'
+   (Put all spoken content in the voiceover_text field instead.)
+
+B. **NO ON-SCREEN TEXT IN VIDEO PROMPTS**: NEVER describe text, titles, captions, labels, speech bubbles, neon text, floating text, written words, or any readable characters appearing in the scene. AI generators CANNOT render text properly — it always comes out garbled and ugly.
+   - WRONG: 'Neon text "QUANTUM IMMORTALITY" appears on screen'
+   - WRONG: 'A speech bubble saying "What?!" floats above'
+   - WRONG: 'Title card reads "Chapter 1"'
+   - WRONG: 'Text overlay showing the equation E=mc²'
+   - RIGHT: Describe the VISUAL SCENE without any text elements. If the original video had text, replace it with equivalent visual storytelling (glowing effects, visual metaphors, etc.) or put a short phrase in title_card_text for post-production overlay.
+
+C. These rules apply equally to video_prompt, video_extend_prompt, AND t2i_prompt fields.
+
+D. **title_card_text rules**: Only populate when the original scene has a prominent short title or heading (a few words or one short sentence). Use normal case (not ALL CAPS). Leave as empty string for long text, paragraphs, or anything beyond a short phrase.
 
 ## NANO BANANA 2 PROMPT RULES
 

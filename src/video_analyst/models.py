@@ -24,23 +24,24 @@ class Scene(BaseModel):
         description=(
             "Veo 3 prompt for the first 8 seconds. Structure: scene description + "
             "visual style + camera movement + subject action + background + lighting + audio. "
-            "NEVER include voiceover text here — voiceover goes only in voiceover_text. "
-            "For dialogue: 'Character says: \"words\"' with '(no subtitles)'. "
-            "Always specify ambient sound to prevent hallucinated audio."
+            "NEVER include voiceover, dialogue, spoken words, or any text/titles/captions here. "
+            "Describe ONLY visuals, camera, and ambient sound."
         )
     )
     video_extend_prompt: str = Field(
         description=(
             "Veo 3 scene extension prompt for continuing beyond 8s. Describes how the "
             "scene evolves visually from the first 8 seconds. "
-            "NEVER include voiceover text here. Empty string if duration is 8 seconds."
+            "NEVER include voiceover, dialogue, spoken words, or any text/titles/captions here. "
+            "Describe ONLY visuals, camera, and ambient sound. Empty string if duration is 8 seconds."
         )
     )
     t2i_prompt: str = Field(
         description=(
             "Nano Banana 2 prompt for generating the reference/first-frame image. "
             "Use natural language, include camera metadata (lens, aperture), "
-            "spatial relationships. Empty string if generation_method is 't2v'."
+            "spatial relationships. NEVER include text, titles, captions, or readable words. "
+            "Empty string if generation_method is 't2v'."
         )
     )
     voiceover_text: str = Field(
@@ -54,10 +55,10 @@ class Scene(BaseModel):
     )
     title_card_text: str = Field(
         description=(
-            "Text for a title card overlay if the original scene features prominent "
-            "on-screen text (big titles, chapter headings, key statements). "
-            "Empty string if no significant text is shown. "
-            "Skip small/incidental text like watermarks, lower-thirds, or captions."
+            "Short title card text (a few words or one short sentence max) if the original "
+            "scene features a prominent title or heading. Use normal case, not ALL CAPS. "
+            "Empty string if no significant text is shown or if the text is longer than "
+            "a short phrase. Skip long sentences, paragraphs, watermarks, lower-thirds, or captions."
         )
     )
     scene_description: str = Field(

@@ -42,5 +42,6 @@ IMPORTANT RULES:
 3. Apply the {style} visual style consistently to every prompt.
 4. Voiceover in {target_language}, sounding natural and human.
 5. Character descriptions must be identical word-for-word across all scenes.
+6. CRITICAL: video_prompt, video_extend_prompt, and t2i_prompt must contain ZERO text content — no voiceover, no dialogue, no "Character says:", no on-screen text descriptions, no titles, no captions, no speech bubbles. These fields describe ONLY visuals, camera, and ambient sound. All spoken words go in voiceover_text. All on-screen text goes in title_card_text.
 
 Output the structured JSON response."""
