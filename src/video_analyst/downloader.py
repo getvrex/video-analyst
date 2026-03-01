@@ -45,12 +45,12 @@ def _find_downloaded_file(output_dir: Path, video_id: str) -> Path | None:
     return None
 
 
-# Format preference: 720p MP4 is ideal for Gemini analysis — good enough quality,
-# small file size. Falls back through progressively lower quality.
+# Format preference: 480p MP4 keeps file size small for fast Gemini upload/processing.
+# Still sufficient quality for scene analysis. Falls back through higher quality if needed.
 _FORMAT_STRING = (
+    "bestvideo[height<=480][ext=mp4]+bestaudio[ext=m4a]/"
     "bestvideo[height<=720][ext=mp4]+bestaudio[ext=m4a]/"
-    "bestvideo[height<=1080][ext=mp4]+bestaudio[ext=m4a]/"
-    "best[height<=720][ext=mp4]/"
+    "best[height<=480][ext=mp4]/"
     "best[ext=mp4]/"
     "best"
 )

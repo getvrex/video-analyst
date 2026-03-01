@@ -56,9 +56,12 @@ class AnalysisResult:
     token_usage: TokenUsage
 
 
-def _wait_for_file_active(client: genai.Client, uploaded_file, verbose: bool = False) -> None:
-    """Poll until uploaded file is in ACTIVE state."""
-    while True:
+def _wait_for_file_active(
+    client: genai.Client, uploaded_file, verbose: bool = False, timeout: int = 300
+) -> None:
+    """Poll until uploaded file is in ACTIVE state, with timeout."""
+    deadline = time.time() + timeout
+    while time.time() < deadline:
         f = client.files.get(name=uploaded_file.name)
         if f.state == "ACTIVE":
             break
@@ -67,6 +70,10 @@ def _wait_for_file_active(client: genai.Client, uploaded_file, verbose: bool = F
         if verbose:
             print(f"  File state: {f.state}, waiting...", file=sys.stderr)
         time.sleep(2)
+    else:
+        raise RuntimeError(
+            f"File processing timed out after {timeout}s: {uploaded_file.name}"
+        )
 
 
 def _generate_with_retry(
