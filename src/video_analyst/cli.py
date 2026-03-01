@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import sys
+from importlib.metadata import version
 from pathlib import Path
 
 import click
@@ -33,6 +34,7 @@ class StyleChoice(click.ParamType):
 
 
 @click.group()
+@click.version_option(version=version("video-analyst"), prog_name="video-analyst")
 def main() -> None:
     """Video Analyst - Analyze videos and produce AI reproduction plans."""
     pass
