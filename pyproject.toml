@@ -4,15 +4,35 @@ build-backend = "hatchling.build"
 
 [project]
 name = "video-analyst"
-version = "1.0.0"
+version = "1.5.0"
 description = "Analyze videos and produce AI reproduction plans using Veo 3 and Nano Banana 2"
+readme = "README.md"
+license = "MIT"
 requires-python = ">=3.11"
+authors = [
+    { name = "getvrex" },
+]
+keywords = ["video", "ai", "gemini", "veo", "analysis", "reproduction"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Multimedia :: Video",
+]
 dependencies = [
     "yt-dlp>=2024.0.0",
     "google-genai>=1.0.0",
     "click>=8.0",
     "pydantic>=2.0",
 ]
+
+[project.urls]
+Homepage = "https://github.com/getvrex/video-analyst"
+Repository = "https://github.com/getvrex/video-analyst"
 
 [project.optional-dependencies]
 dev = [

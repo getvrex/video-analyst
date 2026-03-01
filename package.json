@@ -1,6 +1,6 @@
 {
   "name": "@getvrex/video-analyst",
-  "version": "1.0.0",
+  "version": "1.5.0",
   "description": "Analyze videos and produce AI reproduction plans with Veo 3 and Nano Banana 2 prompts",
   "license": "MIT",
   "repository": {
