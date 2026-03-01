@@ -165,6 +165,19 @@ Produce a condensed reproduction plan:
 - Prioritize the most impactful visual moments
 - Make the content informative yet interesting — don't bore the viewer
 - SKIP all ads, sponsors, end cards, and promotional content"""
+    elif mode == "highlights":
+        mode_instruction = """
+
+## MODE: HIGHLIGHTS
+
+Produce a reproduction plan that covers 50-70% of the original video duration:
+- Keep the most useful, educational, and engaging content
+- Cut redundant examples, repetitive explanations, and filler — but preserve the learning value
+- Maintain the narrative arc: hook → key points → conclusion
+- Include enough detail that a viewer learns the core message without watching the full video
+- Detailed character profiles with reference sheet prompts
+- Cover image prompt optimized for thumbnail click-through
+- SKIP all ads, sponsors, end cards, and promotional content"""
     else:
         mode_instruction = """
 

@@ -42,9 +42,9 @@ def main() -> None:
 @click.argument("url")
 @click.option(
     "--mode", "-m",
-    type=click.Choice(["summary", "full"]),
+    type=click.Choice(["summary", "highlights", "full"]),
     default="full",
-    help="Analysis mode: summary (condensed) or full (comprehensive).",
+    help="Analysis mode: summary (condensed), highlights (50-70% duration), or full (comprehensive).",
 )
 @click.option(
     "--lang", "-l",
