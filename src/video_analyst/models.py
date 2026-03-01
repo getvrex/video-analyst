@@ -52,6 +52,14 @@ class Scene(BaseModel):
     voiceover_duration_estimate_seconds: float = Field(
         description="Estimated voiceover duration based on word count and language"
     )
+    title_card_text: str = Field(
+        description=(
+            "Text for a title card overlay if the original scene features prominent "
+            "on-screen text (big titles, chapter headings, key statements). "
+            "Empty string if no significant text is shown. "
+            "Skip small/incidental text like watermarks, lower-thirds, or captions."
+        )
+    )
     scene_description: str = Field(
         description="Brief human-readable description of what happens in this scene"
     )

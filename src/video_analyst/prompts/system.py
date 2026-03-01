@@ -93,6 +93,7 @@ Include the style directive naturally within each prompt — weave it into the s
 8. video_extend_prompt must reference the first 8 seconds and describe natural continuation
 9. Priority ordering: most important elements first — Veo pays more attention to what comes first
 10. NEVER put voiceover text inside video_prompt or video_extend_prompt. Voiceover is separate — it goes only in voiceover_text. Video prompts describe ONLY visuals, camera, and ambient audio.
+11. NEVER include text, titles, captions, or written words in video_prompt, video_extend_prompt, or t2i_prompt. AI generators render text poorly. If the original scene has a prominent title card or on-screen text, put that text in title_card_text instead. Skip small/incidental text (watermarks, lower-thirds).
 
 ## NANO BANANA 2 PROMPT RULES
 
