@@ -70,15 +70,19 @@ Apply these principles to maximize engagement:
 
     style_section = f"""
 
-## VISUAL STYLE
+## VISUAL STYLE (MANDATORY — EVERY PROMPT)
 
-Apply this consistent visual style to ALL video_prompt, video_extend_prompt, t2i_prompt, and cover_t2i_prompt fields:
+Apply this visual style to ALL video_prompt, video_extend_prompt, t2i_prompt, and cover_t2i_prompt fields:
 
 Video style directive: {style_def['video_directive']}
 
 Image style directive: {style_def['image_directive']}
 
-Include the style directive naturally within each prompt — weave it into the scene description rather than appending it as a separate block. The style must be consistent across every single scene."""
+### CRITICAL STYLE RULES:
+- EVERY video_prompt and video_extend_prompt MUST begin with the video style directive as the first sentence
+- EVERY t2i_prompt MUST begin with the image style directive as the first sentence
+- This is NON-NEGOTIABLE — a prompt missing the style directive is INVALID
+- After the style directive opening, continue with the scene-specific description"""
 
     veo_rules = """
 
