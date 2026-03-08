@@ -27,10 +27,10 @@ def format_markdown(plan: VideoReproductionPlan, style: str = "realistic") -> st
     )
     lines.append("")
 
-    # Viral structure
-    lines.append("## Viral Structure Analysis")
+    # Content strategy
+    lines.append("## Content Strategy")
     lines.append("")
-    lines.append(plan.viral_structure_notes)
+    lines.append(plan.content_strategy_notes)
     lines.append("")
 
     # Characters

@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import json
 import sys
 from importlib.metadata import version
 from pathlib import Path
@@ -72,8 +73,19 @@ def main() -> None:
     help="Output file path (default: stdout).",
 )
 @click.option("--keep-video", is_flag=True, help="Keep downloaded video after analysis.")
+@click.option("--no-transcode", is_flag=True, help="Skip ffmpeg transcode step (use raw downloaded file).")
 @click.option("--model", default=None, help="Override Gemini model name.")
 @click.option("--verbose", "-v", is_flag=True, help="Verbose output.")
+@click.option(
+    "--thinking", is_flag=True,
+    help="Thinking mode: enhance and personalize instead of reproducing.",
+)
+@click.option(
+    "--channel-profile",
+    type=click.Path(exists=True),
+    default=None,
+    help="Path to channel profile JSON file (used with --thinking).",
+)
 def analyze(
     url: str,
     mode: str,
@@ -82,8 +94,11 @@ def analyze(
     fmt: str,
     output: str | None,
     keep_video: bool,
+    no_transcode: bool,
     model: str | None,
     verbose: bool,
+    thinking: bool,
+    channel_profile: str | None,
 ) -> None:
     """Analyze a video URL and produce a reproduction plan."""
 
@@ -91,6 +106,17 @@ def analyze(
     config = Config.from_env()
     if model:
         config.model_name = model
+
+    # Load channel profile JSON if provided
+    channel_profile_data: dict | None = None
+    if channel_profile:
+        try:
+            channel_profile_data = json.loads(
+                Path(channel_profile).read_text(encoding="utf-8")
+            )
+        except (json.JSONDecodeError, OSError) as e:
+            print(f"Error loading channel profile: {e}", file=sys.stderr)
+            raise SystemExit(1)
 
     video_path: Path | None = None
 
@@ -101,6 +127,7 @@ def analyze(
             url=url,
             output_dir=config.download_dir,
             verbose=verbose,
+            transcode=not no_transcode,
         )
         video_path = result.video_path
 
@@ -124,6 +151,8 @@ def analyze(
             config=config,
             style=style,
             verbose=verbose,
+            thinking=thinking,
+            channel_profile=channel_profile_data,
         )
 
         plan = analysis.plan

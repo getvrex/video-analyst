@@ -84,6 +84,8 @@ class CharacterProfile(BaseModel):
 
 
 class VideoReproductionPlan(BaseModel):
+    model_config = {"populate_by_name": True}
+
     title: str = Field(description="Engaging title for the video")
     description: str = Field(description="Brief description of the video concept and hook")
     metadata_tags: list[str] = Field(
@@ -93,11 +95,12 @@ class VideoReproductionPlan(BaseModel):
     total_duration_seconds: int = Field(
         description="Total estimated duration of the reproduced video"
     )
-    viral_structure_notes: str = Field(
+    content_strategy_notes: str = Field(
         description=(
-            "Analysis of the viral structure: hook mechanism (first 3 seconds), "
-            "content arc, resolution, and what makes this video engaging."
-        )
+            "Content strategy analysis: hook mechanism (first 3 seconds), "
+            "content arc, engagement approach, and what makes this video compelling."
+        ),
+        alias="viral_structure_notes",
     )
     characters: list[CharacterProfile] = Field(
         description="Character profiles for consistency. Empty list if no characters needed."

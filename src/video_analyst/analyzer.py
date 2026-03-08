@@ -13,8 +13,8 @@ from google.genai import types
 from .config import Config
 from .humanizer import humanize_voiceovers
 from .models import VideoReproductionPlan, resolve_schema_refs
-from .prompts.system import get_system_prompt
-from .prompts.templates import get_user_prompt
+from .prompts.system import get_system_prompt, get_thinking_system_prompt
+from .prompts.templates import get_user_prompt, get_thinking_user_prompt
 
 
 # Gemini 2.5 Flash pricing (per 1M tokens)
@@ -57,7 +57,7 @@ class AnalysisResult:
 
 
 def _wait_for_file_active(
-    client: genai.Client, uploaded_file, verbose: bool = False, timeout: int = 300
+    client: genai.Client, uploaded_file, verbose: bool = False, timeout: int = 600
 ) -> None:
     """Poll until uploaded file is in ACTIVE state, with timeout."""
     deadline = time.time() + timeout
@@ -103,6 +103,7 @@ def _generate_with_retry(
                 response_schema=schema,
                 temperature=0.7,
                 max_output_tokens=65536,
+                http_options=types.HttpOptions(timeout=1200_000),  # 20 min in ms — long videos need it
             ),
         )
 
@@ -175,6 +176,8 @@ def analyze_video(
     config: Config,
     style: str = "realistic",
     verbose: bool = False,
+    thinking: bool = False,
+    channel_profile: dict | None = None,
 ) -> AnalysisResult:
     """Upload video to Gemini and produce a structured reproduction plan."""
 
@@ -191,15 +194,30 @@ def analyze_video(
         print(f"  File ready: {uploaded_file.name}", file=sys.stderr)
 
     # Step 2: Build prompts
-    system_prompt = get_system_prompt(
-        mode=mode, target_language=target_language, style=style
-    )
-    user_prompt = get_user_prompt(
-        mode=mode,
-        target_language=target_language,
-        video_metadata=video_metadata,
-        style=style,
-    )
+    if thinking:
+        system_prompt = get_thinking_system_prompt(
+            mode=mode,
+            target_language=target_language,
+            style=style,
+            channel_profile=channel_profile,
+        )
+        user_prompt = get_thinking_user_prompt(
+            mode=mode,
+            target_language=target_language,
+            video_metadata=video_metadata,
+            style=style,
+            channel_profile=channel_profile,
+        )
+    else:
+        system_prompt = get_system_prompt(
+            mode=mode, target_language=target_language, style=style
+        )
+        user_prompt = get_user_prompt(
+            mode=mode,
+            target_language=target_language,
+            video_metadata=video_metadata,
+            style=style,
+        )
 
     # Step 3: Build schema
     schema = resolve_schema_refs(VideoReproductionPlan.model_json_schema())
